@@ -6,13 +6,14 @@ import firebase from "../firebase/clientApp";
 // config firebaseui
 const uiConfig = {
   // Redirect to / after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-  signInSuccessUrl: "/",
+  signInSuccessUrl: 'http://localhost:3000',
   signInOptions: [
     // we will display google, email and github sign in options
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
     firebase.auth.GithubAuthProvider.PROVIDER_ID
   ],
+
   
 };
 
