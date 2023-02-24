@@ -17,18 +17,26 @@ const uiConfig = {
 };
 
 export default function SignInScreen() {
-    const [widget, setWidget] = useState(null);
 
-    useEffect(() => {
-        setWidget(
-        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />)
-    }, [])
+    // another solution for authui deleted error
+    // const [widget, setWidget] = useState(null);
+
+    // useEffect(() => {
+    //     setWidget(
+    //     <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />)
+    // }, [])
 
     return (
-        <div>
+        <div style={{
+            maxWidth: "320px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
             <h1>Pineapple Login</h1>
             <p>Please Sign-in</p>
-            {widget}
+            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
         </div>
     )
 }
